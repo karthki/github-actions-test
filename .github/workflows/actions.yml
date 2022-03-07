@@ -3,9 +3,9 @@ name: Actions workflow
 on: [push]
 jobs:
   run-github-actions:
-  runs-on: ubuntu-latest
-  steps: 
-    - name: simple js action
-      run: |
-        pwd
-        ls
+    runs-on: ubuntu-latest
+      steps: 
+        - name: simple js action
+          run: |
+            pwd
+            ls
