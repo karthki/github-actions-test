@@ -8,9 +8,9 @@ jobs:
         - name: simple js action
           run: |
             pwd
-            ls
+            ls -a
         - name: checkout
-          uses: actions/checkout@V3
+          uses: karthki/SaiJavaCode@master
           run: List file after checkout
             pwd
             ls -a
