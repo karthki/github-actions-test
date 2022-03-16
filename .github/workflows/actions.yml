@@ -21,6 +21,8 @@ jobs:
             echo $GITHUB_SHA
             echo $GITHUB_WORKSPACE
             echo $GITHUB_REPOSITORY
+        - name: running evn values  
+          run: env
        # - name: simple js action
        #   run: |
        #    pwd
