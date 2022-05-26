@@ -23,9 +23,9 @@ jobs:
             echo $GITHUB_REPOSITORY
         - name: running evn values  
           run: env
-       # - name: simple js action
-       #   run: |
-       #    pwd
+        - name: simple js action
+          run: |
+           pwd
        #     ls -a
        # - name: checkout
        #   uses: karthki/SaiJavaCode@master
