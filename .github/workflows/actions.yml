@@ -22,7 +22,7 @@ jobs:
             echo $GITHUB_WORKSPACE
             echo $GITHUB_REPOSITORY
             echo $GITHUB.TOKEN
-            cat ${{ github.token }}
+            github.token: ${{ github.token }}
         - name: running evn values  
           run: env
         - name: simple js action
