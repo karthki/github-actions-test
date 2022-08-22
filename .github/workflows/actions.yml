@@ -4,7 +4,11 @@ on:
       environment:
         description: 'Environment to run tests against'
         type: environment
-        required: true
+        required: true      
+        options:
+        - eu-uat
+        - eu-dev
+        - eu-int
 jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
