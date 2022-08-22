@@ -8,6 +8,12 @@ on:
         - eu-uat
         - eu-dev
         - eu-int
+  
+  push:
+    branches:
+     - develop
+     - master
+     - workflow_branch
 jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
