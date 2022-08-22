@@ -1,37 +1,33 @@
-name: Actions workflow
-
-on: 
+on: workflow_testing
   workflow_dispatch:
-  push:
-  pull_request:
-    types: [closed, assigned, opened, reopened]
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      tags:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
+
 jobs:
-  run-github-actions:
+  log-the-inputs:
     runs-on: ubuntu-latest
-    steps: 
-        - name: List files
-          run: |
-            pwd
-            ls -a
-        - name: checkout
-          uses: actions/checkout@v3
-        - name: List files After checkout
-          run: |
-            pwd
-            ls -a
-            echo $GITHUB_SHA
-            echo $GITHUB_WORKSPACE
-            echo $GITHUB_REPOSITORY
-            echo $GITHUB.TOKEN
-            #github.token: ${{ github.token }}
-        - name: running evn values  
-          run: env
-        - name: simple js action
-          run: |
-           pwd
-       #     ls -a
-       # - name: checkout
-       #   uses: karthki/SaiJavaCode@master
-       #  run: List file after checkout
-       #     pwd
-       #     ls -a
+    steps:
+      - run: |
+          echo "Log level: $LEVEL"
+          echo "Tags: $TAGS"
+          echo "Environment: $ENVIRONMENT"
+        env:
+          LEVEL: ${{ inputs.logLevel }}
+          TAGS: ${{ inputs.tags }}
+          ENVIRONMENT: ${{ inputs.environment }}
