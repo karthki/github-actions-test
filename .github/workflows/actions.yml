@@ -4,7 +4,13 @@ on:
       environment:
         description: 'Environment to run tests against'
         type: environment
-        required: true      
+        required: true
+      boolean:
+        type: boolean
+        description: True or False
+      choice:
+        type: choice
+        description: Make a choice
         options:
         - eu-uat
         - eu-dev
