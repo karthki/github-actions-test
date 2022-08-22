@@ -2,14 +2,14 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Environment to run tests against'
-        type: environment
-        required: true
+        #description: 'Environment to run tests against'
+        #type: environment
+        #required: true
       boolean:
         type: boolean
-      #choice:
-       # type: choice
-        #description: Make a choice
+      choice:
+        type: choice
+        description: Make a choice
         options:
         - eu-uat
         - eu-dev
