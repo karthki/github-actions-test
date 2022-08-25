@@ -1,8 +1,8 @@
 on:
   workflow_dispatch:
     inputs:
-      choice:
-        type: choice
+      environment:
+        type: environment
         description: Make a environment
         options:
         - eu-uat
